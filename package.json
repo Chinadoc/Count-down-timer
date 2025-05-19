@@ -1,0 +1,22 @@
+{
+  "name": "countdown-timer-app",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "mobile": "yarn workspace @countdown-timer-app/mobile start",
+    "web": "yarn workspace @countdown-timer-app/web dev",
+    "ios": "yarn workspace @countdown-timer-app/mobile ios",
+    "backend": "yarn workspace @countdown-timer-app/backend dev",
+    "backend:build": "yarn workspace @countdown-timer-app/backend build",
+    "dev": "concurrently \"yarn backend\" \"yarn web\" -n \"backend,web\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "concurrently": "^8.2.2"
+  }
+}
