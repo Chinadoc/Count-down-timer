@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   // This is needed to enable importing from outside the `apps/web` directory
-  transpilePackages: ['@countdown-timer-app/ui', '@countdown-timer-app/core'],
+  transpilePackages: ['@countdown-timer-app/ui', '@countdown-timer-app/core', 'react-native', 'expo', 'expo-av', 'expo-modules-core', 'expo-asset'],
   webpack: (config) => {
     // Aliasing react-native to react-native-web
     config.resolve.alias = {

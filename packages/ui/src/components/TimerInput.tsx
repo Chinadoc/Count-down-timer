@@ -6,13 +6,16 @@ export const TimerInput: React.FC<TimerInputProps> = ({
   inputSeconds,
   onChangeText,
   disabled,
+  placeholder = 'Enter seconds',
+  accessibilityLabel,
 }) => (
   <TextInput
     style={[styles.input, disabled && styles.disabled]}
     value={inputSeconds}
     onChangeText={onChangeText}
     keyboardType="numeric"
-    placeholder="Enter seconds"
+    placeholder={placeholder}
+    accessibilityLabel={accessibilityLabel}
     placeholderTextColor="#999"
     editable={!disabled}
   />

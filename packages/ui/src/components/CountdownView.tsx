@@ -242,7 +242,7 @@ export const CountdownView: React.FC<TimerProps> = ({ initialSeconds = 120 }) =>
       ) : null}
       
       <TimerDisplay 
-        secondsLeft={formatTime(timerState.remainingTime)} 
+        secondsLeft={timerState.remainingTime}
         accessibilityLabel={`Time remaining: ${formatTime(timerState.remainingTime)}`}
       />
       
@@ -251,7 +251,6 @@ export const CountdownView: React.FC<TimerProps> = ({ initialSeconds = 120 }) =>
         onChangeText={setInputSeconds}
         disabled={timerState.isRunning}
         placeholder="Enter seconds"
-        min={1}
         accessibilityLabel="Enter timer duration in seconds"
       />
       

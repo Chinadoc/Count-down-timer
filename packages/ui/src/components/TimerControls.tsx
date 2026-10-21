@@ -6,16 +6,23 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
   isRunning,
   onStartStop,
   onReset,
+  startLabel = 'Start',
+  stopLabel = 'Stop',
+  resetLabel = 'Reset',
+  startAccessibilityLabel,
+  stopAccessibilityLabel,
+  resetAccessibilityLabel,
 }) => (
   <View style={styles.buttonContainer}>
     <Pressable
       onPress={onStartStop}
+      accessibilityLabel={isRunning ? stopAccessibilityLabel : startAccessibilityLabel}
       style={[styles.button, isRunning ? styles.stopButton : styles.startButton]}
     >
-      <Text style={styles.buttonText}>{isRunning ? 'Stop' : 'Start'}</Text>
+      <Text style={styles.buttonText}>{isRunning ? stopLabel : startLabel}</Text>
     </Pressable>
-    <Pressable onPress={onReset} style={[styles.button, styles.resetButton]}>
-      <Text style={styles.buttonText}>Reset</Text>
+    <Pressable onPress={onReset} accessibilityLabel={resetAccessibilityLabel} style={[styles.button, styles.resetButton]}>
+      <Text style={styles.buttonText}>{resetLabel}</Text>
     </Pressable>
   </View>
 );
